@@ -1,63 +1,516 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GetNoSkill | Call of Duty Creator</title>
+
+<title>GetNoSkill | Aether Gaming</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#0b0b0b;
-    color:white;
+
+background:#050008;
+color:white;
+overflow-x:hidden;
+
 }
+
+
+/* Hintergrund */
+
+body:before{
+
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle at 20% 20%, #a000ff, transparent 30%),
+radial-gradient(circle at 80% 80%, #5b00ff, transparent 30%);
+
+opacity:.25;
+z-index:-1;
+
+animation:aether 8s infinite alternate;
+
+}
+
+
+@keyframes aether{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.2);
+}
+
+}
+
+
+/* Navigation */
+
+nav{
+
+position:fixed;
+top:0;
+width:100%;
+
+padding:20px;
+
+display:flex;
+justify-content:space-between;
+
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+
+z-index:10;
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
+
+color:#d58cff;
+
+text-shadow:
+0 0 20px purple;
+
+}
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin:10px;
+
+}
+
+
+/* Startseite */
 
 header{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
 }
 
-.hero h1{
-    font-size:70px;
-    color:#00ff88;
+
+h1{
+
+font-size:80px;
+
+color:#d58cff;
+
+text-shadow:
+0 0 20px #9d00ff,
+0 0 50px #7200ff;
+
+animation:float 3s infinite alternate;
+
 }
+
+
+@keyframes float{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-15px);
+}
+
+}
+
 
 .hero p{
-    margin:20px auto;
-    max-width:700px;
-    font-size:22px;
-    color:#ddd;
+
+font-size:22px;
+margin:25px;
+
+color:#ddd;
+
 }
+
 
 .button{
-    display:inline-block;
-    margin-top:20px;
-    padding:15px 35px;
-    background:#00ff88;
-    color:black;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:8px;
-    transition:.3s;
+
+display:inline-block;
+
+padding:15px 35px;
+
+background:linear-gradient(
+45deg,
+#7200ff,
+#d000ff
+);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+box-shadow:
+0 0 25px purple;
+
+transition:.3s;
+
 }
+
 
 .button:hover{
-    transform:scale(1.05);
-    background:white;
+
+transform:scale(1.1);
+
 }
 
+
+/* Bereiche */
+
 section{
-   
+
+padding:90px 10%;
+
+}
+
+
+.title{
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:40px;
+
+color:#d58cff;
+
+}
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+
+.card{
+
+background:
+rgba(255,255,255,.08);
+
+padding:30px;
+
+border-radius:20px;
+
+border:1px solid #8a00ff;
+
+backdrop-filter:blur(10px);
+
+transition:.4s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 30px purple;
+
+}
+
+
+.card h3{
+
+color:#d58cff;
+
+margin-bottom:15px;
+
+font-size:25px;
+
+}
+
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+background:#020003;
+
+color:#777;
+
+}
+
+
+/* Partikel */
+
+.particle{
+
+position:fixed;
+
+width:5px;
+
+height:5px;
+
+background:#d58cff;
+
+border-radius:50%;
+
+box-shadow:
+0 0 15px purple;
+
+animation:move 8s infinite;
+
+}
+
+
+@keyframes move{
+
+50%{
+
+transform:
+translateY(-100px);
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+GETNOSKILL
+</div>
+
+<div>
+
+<a href="#">
+Home
+</a>
+
+<a href="#content">
+Content
+</a>
+
+<a href="#social">
+Social
+</a>
+
+</div>
+
+</nav>
+
+
+
+<header>
+
+<div class="hero">
+
+<h1>
+GETNOSKILL
+</h1>
+
+
+<p>
+💜 Call of Duty Creator<br>
+Aether Gaming • YouTube • TikTok
+</p>
+
+
+<a class="button" href="#content">
+Enter Aether
+</a>
+
+
+</div>
+
+</header>
+
+
+
+
+<section id="content">
+
+
+<h2 class="title">
+Content
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>🎮 Gameplay</h3>
+
+<p>
+Warzone, Multiplayer und Ranked Highlights.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🔥 TikTok</h3>
+
+<p>
+Schnelle Clips und beste Momente.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>📺 YouTube</h3>
+
+<p>
+Challenges, Guides und lange Videos.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section>
+
+
+<h2 class="title">
+Stats
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+<h3>100K+</h3>
+<p>Views</p>
+</div>
+
+
+<div class="card">
+<h3>500+</h3>
+<p>Clips</p>
+</div>
+
+
+<div class="card">
+<h3>24/7</h3>
+<p>Gaming</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section id="social">
+
+
+<h2 class="title">
+Community
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>📺 YouTube</h3>
+
+<a class="button" href="#">
+Besuchen
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>🎵 TikTok</h3>
+
+<a class="button" href="#">
+Besuchen
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>💜 Discord</h3>
+
+<a class="button" href="#">
+Beitreten
+</a>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<footer>
+
+© 2026 GetNoSkill
+<br>
