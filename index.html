@@ -1,29 +1,131 @@
-.logo {
+<!DOCTYPE html>
+<html lang="de">
 
-font-size:100px;
-font-weight:1000;
-letter-spacing:15px;
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GETNOSKILL | Aether</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+
+body{
+
+height:100vh;
+background:#020003;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
 
 color:white;
 
-text-shadow:
-0 0 20px white,
-0 0 50px #9d00ff,
-0 0 100px purple;
+}
 
 
-animation:
-logoEnter 1.2s cubic-bezier(.17,.67,.38,1.4),
-energyPulse 3s infinite 1.2s;
+/* Aether Portal */
+
+.portal{
+
+position:absolute;
+
+width:800px;
+height:800px;
+
+background:
+radial-gradient(circle,
+#b000ff,
+transparent 65%);
+
+filter:blur(100px);
+
+animation:portalMove 6s infinite alternate;
+
+}
+
+
+@keyframes portalMove{
+
+from{
+
+transform:scale(.8);
+
+opacity:.4;
+
+}
+
+to{
+
+transform:scale(1.4);
+
+opacity:.8;
+
+}
 
 }
 
 
 
-@keyframes logoEnter {
+/* Inhalt */
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+}
 
 
-0% {
+
+/* GETNOSKILL Logo */
+
+.logo{
+
+font-size:90px;
+
+font-weight:900;
+
+letter-spacing:12px;
+
+
+color:white;
+
+
+text-shadow:
+
+0 0 20px white,
+0 0 60px #9d00ff,
+0 0 120px purple;
+
+
+animation:
+
+logoEnter 1.2s cubic-bezier(.17,.67,.38,1.4),
+energyPulse 3s infinite 1.2s;
+
+
+}
+
+
+
+@keyframes logoEnter{
+
+
+0%{
 
 transform:
 
@@ -31,17 +133,16 @@ translateX(-900px)
 scale(2)
 rotate(-10deg);
 
+
 opacity:0;
 
-filter:
-blur(20px);
+filter:blur(20px);
 
 }
 
 
 
-60% {
-
+60%{
 
 transform:
 
@@ -49,26 +150,26 @@ translateX(40px)
 scale(1.1)
 rotate(3deg);
 
+
 opacity:1;
 
 }
 
 
 
-80% {
-
+80%{
 
 transform:
 
 translateX(-15px)
 scale(.95);
 
+
 }
 
 
 
-100% {
-
+100%{
 
 transform:
 
@@ -76,44 +177,39 @@ translateX(0)
 scale(1)
 rotate(0);
 
-filter:
-blur(0);
+
+filter:blur(0);
 
 }
 
+
 }
 
 
 
 
+@keyframes energyPulse{
 
-@keyframes energyPulse {
 
-
-0%,100% {
+0%,100%{
 
 
 text-shadow:
 
 0 0 20px white,
-0 0 50px #9d00ff,
-0 0 100px purple;
+0 0 60px #9d00ff,
+0 0 120px purple;
 
 
 }
 
 
 
-50% {
+50%{
 
 
 text-shadow:
 
 0 0 40px white,
 0 0 100px #d000ff,
-0 0 180px #7200ff;
-
-
-}
-
-}
+0 
