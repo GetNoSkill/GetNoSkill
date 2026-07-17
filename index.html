@@ -2,10 +2,11 @@
 <html lang="de">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GETNOSKILL | Enter</title>
+<title>GETNOSKILL | Aether</title>
 
 <style>
 
@@ -16,98 +17,190 @@ box-sizing:border-box;
 font-family:Arial, sans-serif;
 }
 
+
 body{
+
 height:100vh;
-background:#050008;
+overflow:hidden;
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(20,0,40,.8)
+),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+
+background-size:cover;
+background-position:center;
+
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
+
 color:white;
+
 }
 
+
+/* Aether Nebel */
 
 body::before{
+
 content:"";
+
 position:absolute;
-width:600px;
-height:600px;
-background:#9d00ff;
-filter:blur(150px);
+
+width:900px;
+height:900px;
+
+background:
+radial-gradient(
+circle,
+#8a00ff,
+transparent 60%
+);
+
+filter:blur(120px);
+
+animation:nebula 8s infinite alternate;
+
 opacity:.5;
-animation:aether 5s infinite alternate;
+
 }
 
 
-@keyframes aether{
+@keyframes nebula{
+
 from{
-transform:scale(1);
+transform:scale(1) rotate(0deg);
 }
+
 to{
-transform:scale(1.4);
+transform:scale(1.4) rotate(180deg);
 }
+
 }
+
 
 
 .container{
-text-align:center;
+
+position:relative;
 z-index:2;
+
+text-align:center;
+
 }
+
 
 
 h1{
-font-size:80px;
-color:#d58cff;
+
+font-size:90px;
+
+letter-spacing:10px;
+
+color:#d8a0ff;
+
+
+animation:
+
+glitch 2s infinite,
+float 3s infinite alternate;
+
 
 text-shadow:
-0 0 20px #9d00ff,
-0 0 50px #9d00ff;
 
-animation:float 3s infinite alternate;
+0 0 10px #9d00ff,
+0 0 30px #9d00ff,
+0 0 70px purple;
+
 }
+
 
 
 @keyframes float{
+
 from{
 transform:translateY(0);
 }
+
 to{
 transform:translateY(-20px);
 }
+
 }
 
 
-p{
+
+@keyframes glitch{
+
+0%,100%{
+transform:translateX(0);
+}
+
+
+20%{
+transform:translateX(3px);
+}
+
+
+40%{
+transform:translateX(-3px);
+}
+
+
+}
+
+
+.subtitle{
+
 font-size:25px;
+
 margin:30px;
+
 color:#ddd;
+
+text-shadow:
+
+0 0 15px purple;
+
 }
+
+
 
 
 button{
 
-padding:20px 60px;
+padding:20px 70px;
 
-border:none;
+border-radius:50px;
 
-border-radius:40px;
+border:2px solid #d58cff;
+
+background:
+
+linear-gradient(
+45deg,
+#5200ff,
+#c000ff
+);
+
+
+color:white;
 
 font-size:22px;
 
 cursor:pointer;
 
-color:white;
-
-background:linear-gradient(
-45deg,
-#7200ff,
-#d000ff
-);
 
 box-shadow:
+
 0 0 30px purple;
 
-transition:.3s;
+
+transition:.4s;
+
 
 }
 
@@ -117,12 +210,60 @@ button:hover{
 transform:scale(1.15);
 
 box-shadow:
-0 0 60px #d000ff;
+
+0 0 80px #d000ff;
+
+}
+
+
+
+/* Partikel */
+
+.particle{
+
+position:absolute;
+
+width:5px;
+
+height:5px;
+
+background:#d58cff;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 20px purple;
+
+
+animation:move 10s infinite;
+
+}
+
+
+
+@keyframes move{
+
+0%{
+
+transform:
+translateY(100vh);
+
+}
+
+
+100%{
+
+transform:
+translateY(-100vh);
+
+}
 
 }
 
 
 </style>
+
 
 </head>
 
@@ -138,21 +279,55 @@ GETNOSKILL
 </h1>
 
 
-<p>
-💜 Welcome to the Aether
-</p>
+<div class="subtitle">
+
+🧟 ENTER THE AETHER<br>
+Call of Duty Zombies Experience
+
+</div>
 
 
 <a href="home.html">
 
 <button>
+
 ENTER WEBSITE
+
 </button>
 
 </a>
 
 
 </div>
+
+
+
+<script>
+
+
+for(let i=0;i<50;i++){
+
+let p=document.createElement("div");
+
+p.className="particle";
+
+
+p.style.left=Math.random()*100+"%";
+
+p.style.animationDelay=
+Math.random()*10+"s";
+
+
+p.style.opacity=
+Math.random();
+
+
+document.body.appendChild(p);
+
+}
+
+
+</script>
 
 
 </body>
