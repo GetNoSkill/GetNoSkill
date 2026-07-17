@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GETNOSKILL | Enter</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+
+height:100vh;
+background:#050008;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+color:white;
+
+}
+
+
+/* Aether Hintergrund */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+background:#9d00ff;
+
+filter:blur(150px);
+
+opacity:.5;
+
+animation:aether 5s infinite alternate;
+
+}
+
+
+@keyframes aether{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.4);
+}
+
+}
+
+
+.container{
+
+text-align:center;
+z-index:2;
+
+}
+
+
+h1{
+
+font-size:80px;
+
+color:#d58cff;
+
+text-shadow:
+
+0 0 20px #9d00ff,
+0 0 50px #9d00ff;
+
+animation:float 3s infinite alternate;
+
+}
+
+
+@keyframes float{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-20px);
+}
+
+}
+
+
+p{
+
+font-size:25px;
+
+margin:30px;
+
+color:#ddd;
+
+}
+
+
+button{
+
+padding:20px 60px;
+
+border:none;
+
+border-radius:40px;
+
+font-size:22px;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(
+45deg,
+#7200ff,
+#d000ff
+);
+
+
+box-shadow:
+
+0 0 30px purple;
+
+
+transition:.3s;
+
+}
+
+
+button:hover{
+
+transform:scale(1.15);
+
+box-shadow:
+
+0 0 60px #d000ff;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+GETNOSKILL
+</h1>
+
+
+<p>
+💜 Welcome to the Aether
+</p>
+
+
+<a href="home.html">
+
+<button>
+ENTER WEBSITE
+</button>
+
+</a>
+
+
+</div>
+
+
+</body>
+
+</html>
