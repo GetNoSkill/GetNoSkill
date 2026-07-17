@@ -1,335 +1,42 @@
-<!DOCTYPE html>
-<html lang="de">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GETNOSKILL | Aether</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+.logo {
+    animation:
+    slam 0.8s ease-out,
+    glitch 3s infinite;
 }
 
 
-body{
+@keyframes slam {
 
-height:100vh;
-overflow:hidden;
-
-background:
-linear-gradient(
-rgba(0,0,0,.75),
-rgba(20,0,40,.8)
-),
-url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-color:white;
-
+0% {
+transform:translateX(-500px) scale(2);
+opacity:0;
 }
 
-
-/* Aether Nebel */
-
-body::before{
-
-content:"";
-
-position:absolute;
-
-width:900px;
-height:900px;
-
-background:
-radial-gradient(
-circle,
-#8a00ff,
-transparent 60%
-);
-
-filter:blur(120px);
-
-animation:nebula 8s infinite alternate;
-
-opacity:.5;
-
+60% {
+transform:translateX(30px) scale(1);
 }
 
-
-@keyframes nebula{
-
-from{
-transform:scale(1) rotate(0deg);
-}
-
-to{
-transform:scale(1.4) rotate(180deg);
-}
-
-}
-
-
-
-.container{
-
-position:relative;
-z-index:2;
-
-text-align:center;
-
-}
-
-
-
-h1{
-
-font-size:90px;
-
-letter-spacing:10px;
-
-color:#d8a0ff;
-
-
-animation:
-
-glitch 2s infinite,
-float 3s infinite alternate;
-
-
-text-shadow:
-
-0 0 10px #9d00ff,
-0 0 30px #9d00ff,
-0 0 70px purple;
-
-}
-
-
-
-@keyframes float{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-20px);
-}
-
-}
-
-
-
-@keyframes glitch{
-
-0%,100%{
+100% {
 transform:translateX(0);
+opacity:1;
 }
-
-
-20%{
-transform:translateX(3px);
-}
-
-
-40%{
-transform:translateX(-3px);
-}
-
 
 }
 
 
-.subtitle{
+@keyframes glitch {
 
-font-size:25px;
-
-margin:30px;
-
-color:#ddd;
-
+0%,100% {
 text-shadow:
-
-0 0 15px purple;
-
-}
-
-
-
-
-button{
-
-padding:20px 70px;
-
-border-radius:50px;
-
-border:2px solid #d58cff;
-
-background:
-
-linear-gradient(
-45deg,
-#5200ff,
-#c000ff
-);
-
-
-color:white;
-
-font-size:22px;
-
-cursor:pointer;
-
-
-box-shadow:
-
-0 0 30px purple;
-
-
-transition:.4s;
-
-
-}
-
-
-button:hover{
-
-transform:scale(1.15);
-
-box-shadow:
-
-0 0 80px #d000ff;
-
-}
-
-
-
-/* Partikel */
-
-.particle{
-
-position:absolute;
-
-width:5px;
-
-height:5px;
-
-background:#d58cff;
-
-border-radius:50%;
-
-box-shadow:
-
 0 0 20px purple;
-
-
-animation:move 10s infinite;
-
 }
 
-
-
-@keyframes move{
-
-0%{
-
-transform:
-translateY(100vh);
-
+20% {
+transform:skewX(10deg);
 }
 
-
-100%{
-
-transform:
-translateY(-100vh);
-
+25% {
+transform:skewX(-10deg);
 }
 
 }
-
-
-</style>
-
-
-</head>
-
-
-<body>
-
-
-<div class="container">
-
-
-<h1>
-GETNOSKILL
-</h1>
-
-
-<div class="subtitle">
-
-🧟 ENTER THE AETHER<br>
-Call of Duty Zombies Experience
-
-</div>
-
-
-<a href="home.html">
-
-<button>
-
-ENTER WEBSITE
-
-</button>
-
-</a>
-
-
-</div>
-
-
-
-<script>
-
-
-for(let i=0;i<50;i++){
-
-let p=document.createElement("div");
-
-p.className="particle";
-
-
-p.style.left=Math.random()*100+"%";
-
-p.style.animationDelay=
-Math.random()*10+"s";
-
-
-p.style.opacity=
-Math.random();
-
-
-document.body.appendChild(p);
-
-}
-
-
-</script>
-
-
-</body>
-
-</html>
