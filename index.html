@@ -1,42 +1,119 @@
 .logo {
-    animation:
-    slam 0.8s ease-out,
-    glitch 3s infinite;
+
+font-size:100px;
+font-weight:1000;
+letter-spacing:15px;
+
+color:white;
+
+text-shadow:
+0 0 20px white,
+0 0 50px #9d00ff,
+0 0 100px purple;
+
+
+animation:
+logoEnter 1.2s cubic-bezier(.17,.67,.38,1.4),
+energyPulse 3s infinite 1.2s;
+
 }
 
 
-@keyframes slam {
+
+@keyframes logoEnter {
+
 
 0% {
-transform:translateX(-500px) scale(2);
+
+transform:
+
+translateX(-900px)
+scale(2)
+rotate(-10deg);
+
 opacity:0;
+
+filter:
+blur(20px);
+
 }
+
+
 
 60% {
-transform:translateX(30px) scale(1);
+
+
+transform:
+
+translateX(40px)
+scale(1.1)
+rotate(3deg);
+
+opacity:1;
+
 }
+
+
+
+80% {
+
+
+transform:
+
+translateX(-15px)
+scale(.95);
+
+}
+
+
 
 100% {
-transform:translateX(0);
-opacity:1;
-}
+
+
+transform:
+
+translateX(0)
+scale(1)
+rotate(0);
+
+filter:
+blur(0);
 
 }
 
+}
 
-@keyframes glitch {
+
+
+
+
+@keyframes energyPulse {
+
 
 0%,100% {
+
+
 text-shadow:
-0 0 20px purple;
+
+0 0 20px white,
+0 0 50px #9d00ff,
+0 0 100px purple;
+
+
 }
 
-20% {
-transform:skewX(10deg);
-}
 
-25% {
-transform:skewX(-10deg);
+
+50% {
+
+
+text-shadow:
+
+0 0 40px white,
+0 0 100px #d000ff,
+0 0 180px #7200ff;
+
+
 }
 
 }
